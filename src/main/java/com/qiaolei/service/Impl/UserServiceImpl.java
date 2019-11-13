@@ -25,6 +25,18 @@ public class UserServiceImpl implements UserService {
 		PageInfo info = new PageInfo(user);
 		return info;
 	}
+
+	@Override
+	public User getUserById(Integer userId) {
+		
+		return mapper.getUserById(userId);
+	}
+
+	@Override
+	public int updateState(Integer userId, Integer state) {
+		// TODO Auto-generated method stub
+		return mapper.updateState(userId,state);
+	}
 	
 	
 }
