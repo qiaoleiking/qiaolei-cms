@@ -134,4 +134,11 @@ public class User implements Serializable{
 				+ update_time + ", url=" + url + ", score=" + score + ", role="
 				+ role + "]";
 	}
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+	
+	
 }

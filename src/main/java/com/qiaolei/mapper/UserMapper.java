@@ -39,5 +39,25 @@ public interface UserMapper {
 	    * @throws
 	 */
 	int updateState(@Param("userId")Integer userId, @Param("state")Integer state);
+	/**
+	 * 
+	    * @Title: findByName
+	    * @Description: 判断用户是否存在
+	    * @param @param username
+	    * @param @return    参数
+	    * @return User    返回类型
+	    * @throws
+	 */
+	User findByName(@Param("username")String username);
+	/**
+	 * 
+	    * @Title: add
+	    * @Description:注册一个用户
+	    * @param @param user
+	    * @param @return    参数
+	    * @return int    返回类型
+	    * @throws
+	 */
+	int add(User user);
 
 }

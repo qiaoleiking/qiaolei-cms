@@ -36,5 +36,27 @@ public interface UserService {
 	    * @throws
 	 */
 	int updateState(Integer userId, Integer state);
+	
+	
+	/**
+	 * 
+	    * @Title: register
+	    * @Description:注册一个用户
+	    * @param @param user
+	    * @param @return    参数
+	    * @return int    返回类型
+	    * @throws
+	 */
+	int register(User user);
+	/**
+	 * 
+	    * @Title: login
+	    * @Description: 用户登录
+	    * @param @param user
+	    * @param @return    参数
+	    * @return User    返回类型
+	    * @throws
+	 */
+	User login(User user);
 
 }
