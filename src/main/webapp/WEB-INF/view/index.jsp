@@ -22,58 +22,15 @@
 	.menu li:hover{
 		background:gray;
 	}
-	
-	
 </style>
 
 </head>
-<body>
-	<nav class="navbar navbar-default">
- 
-  	
-  	<!-- logo -->
-  	<div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="/images/logo.png">
-      </a>
-      
-      
-      
-    </div>
-    
-      <form class="navbar-form"  style="float:none;text-align:center;">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      
-    <!-- 搜索框和右侧登录信息 -->
-    <div class="collapse navbar-collapse" style="float:none;text-align:right;"  id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-      </ul>
-      
-    
-      
-      <ul class="nav navbar-nav navbar-right" >
-        <li><a href="#"><img width="40px" height="40px" src="/images/donghua.gif"/> </a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          		张三 <span class="caret"></span></a>
-          <ul class="dropdown-menu ">
-            <li><a href="#">个人中心</a></li>
-            <li><a href="#">个人设置</a></li>
-            <li><a href="#">修改头像</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">退出登录</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-    
- 
-</nav>
+<body style="background-image:url(/images/timg.jpg);background-repeat:no-repeat">
+	
+	<nav class="navbar navbar-default navbar-static-top">
+			<%@include  file="common/top.jsp" %>
+	</nav>
+	
 
 <div class="container-fluid" >
 	<div class="container" style="minheight:200px" >
@@ -106,13 +63,13 @@
 						<!-- 轮播（Carousel）项目 -->
 						<div class="carousel-inner">
 							<div class="item active">
-								<img height="300px" src="/images/donghua.gif" alt="First slide">
+								<img height="150px"  width="700px"  src="/images/115748249.png" alt="First slide">
 							</div>
 							<div  class="item">
-								<img height="300px" src="/images/avatar1.jpg" alt="Second slide">
+								<img height="150px" width="700px" src="/images/timg (1).jpg" alt="Second slide">
 							</div>
 							<div class="item">
-								<img height="300px" src="/images/bg05.jpg" alt="Third slide">
+								<img height="150px" width="700px" src="/images/662c8da2b64e3cf.jpeg" alt="Third slide">
 							</div>
 						</div>
 						<!-- 轮播（Carousel）导航 -->
@@ -129,8 +86,10 @@
 					 <div >
 					 	<c:forEach items="${info.list}" var="l" >
 						<div class=row >
-							 <hr align="left" style="width:100%">
-							<div class="col-md-4"><img height="50px" width="50px" src="/images/avatar1.jpg"></div>
+							<hr width="88%" style="background-color:#D2691E;border:none;height:1px">
+							<div class="col-md-2" style="text-align:right"><img height="50px" 
+							width="50px"   src="/pic/${l.picture}" onerror="this.src='/images/default-cat.png'"
+							class="img-rounded"></div>
 							<div class="col-md-8">
 							<a href="javascript:showArticle(${l.id})">${l.title }</a>	
 							<br>
@@ -141,7 +100,8 @@
 							</div>
 						</div>
 						</c:forEach>
-						<div class="row">
+						<div class="row" align="center">
+						<hr width="88%" style="background-color:#D2691E;border:none;height:1px">
 							<ul class="pagination">
 								    <li><a href="/index?pageNum=${info.prePage}">&laquo;</a></li>
 								    <c:forEach begin="${info.pageNum-2 > 1 ? info.pageNum-2:1}" end="${info.pageNum+2 > info.pages ? info.pages:info.pageNum+2}" varStatus="index">    		
@@ -156,7 +116,7 @@
 								    <li><a href="/index?pageNum=${info.nextPage}">&raquo;</a></li>
 								</ul>
 						</div>
-		</div>		
+			</div>		
 </div>
 			<!-- 中间的内容结束 -->
 			<div class="col-md-2" style="minheight:200px" >
@@ -165,9 +125,24 @@
 						<h3 class="panel-title">面板标题</h3>
 					</div>
 					<div class="panel-body">
-						这是一个基本的面板
+						<h6>乔磊</h6><br>
+						<h6>1707D</h6>
 					</div>
 				</div>
+				
+				
+						<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">图片文章</h3>
+					</div>
+					<div class="panel-body">
+						<c:forEach items="${imgArticles}" var="article" varStatus="index"> 
+							<a href="javascript:showArticle(${article.id})">${index.index}. ${article.title}</a>
+							<br/>
+						</c:forEach>
+					</div>
+				</div>
+				
 				
 				<div class="panel panel-info">
 					<div class="panel-heading">
@@ -184,12 +159,17 @@
 		</div>
 	</div>
 </div>
-			<!-- 底部 -->
-			<nav class="navbar navbar-default">
-			 	 <div class="container-fluid">
-			 </div>
-	</nav>
 
+			<!-- 底部 -->
+<nav class="navbar navbar-default " style="background:#666">
+ 	<div class="container-fluid" style="text-align:center;height: 5px ">
+ 		<div class="row" style="margin-top:13px">
+ 	    	<c:forEach items="${linklist.list }" var="link">
+ 	    		<div class="col-md-1"><a  style="color: red"  href="${link.url}" class="fl"> ${link.name}</a></div>
+ 	    	</c:forEach>
+ 		</div>
+	</div>
+</nav>
 		<script type="text/javascript">
 			
 		
@@ -203,9 +183,6 @@
 						
 					})
 				})
-		
-		
-		
 		
 				function showArticle(id){
 					var url = "/article/showdetail?id="+id

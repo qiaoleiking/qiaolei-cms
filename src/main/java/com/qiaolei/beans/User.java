@@ -31,7 +31,7 @@ public class User implements Serializable{
 	
 	private String url;
 	private Integer score;	
-	private Integer role=ConstantClass.USER_ROLE_GENERAL;
+	private Integer role = ConstantClass.USER_ROLE_GENERAL;
 	
 	public Integer getId() {
 		return id;

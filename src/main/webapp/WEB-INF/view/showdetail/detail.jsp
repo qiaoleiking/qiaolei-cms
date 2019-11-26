@@ -21,7 +21,8 @@
 					<h5 style="color: green">
 						作者:${articel.user.username }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						频道:${articel.channel.name }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						分类:${articel.category.name }
+						分类:${articel.category.name }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="javascript:collect(${articel.id })">收藏</a>
 					</h5>
 						<br>
 					${articel.content }
@@ -31,6 +32,26 @@
     			<li><a href="#">上一篇</a></li>
    				 <li><a href="#">下一篇</a></li>
 			</ul>
+			
+			<script type="text/javascript">
+			
+					function collect(id){
+						
+						$.post(
+							"/user/collect",	
+							{id:id},
+							function(Msg){
+								if(Msg.result == 1){
+									alert("收藏成功")
+								}else{
+									alert(msg.errorMsg)
+								}
+							},"json"
+						)
+					}
+			
+			</script>
+			
 </body>
 </html>
 
