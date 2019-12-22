@@ -144,6 +144,7 @@ public class AdminController {
 	@RequestMapping("applyArticle")
 	@ResponseBody
 	public MsgResult applyArticle(int id,int status) {
+		System.err.println("---------------");
 		Articel article = articleService.checkExist(id);
 		CmsAssert.AssertTrue(article!=null, "该文已经不存在");
 		int result = articleService.apply( id,status);

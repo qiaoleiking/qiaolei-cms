@@ -21,7 +21,7 @@
 					<ul class="nav nav-pills nav-stacked">
 					  <li class="active"><a href="javascript:showFuction('/admin/articles')">文章列表</a></li>
 					  <li><a href="javascript:showFuction('/user/hello')">测试</a></li>
-					  <li><a href="javascript:showFuction('/link/list')">友情链接管理</a></li>
+					  <li><a href="javascript:showFuction('/link/list')">1</a></li>
 					  <li>投票管理
 					  	<ul class="nav nav-pills nav-stacked">
 					  		<li><a href="#">投票列表</a></li>

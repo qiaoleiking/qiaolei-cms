@@ -103,17 +103,17 @@
 						<div class="row" align="center">
 						<hr width="88%" style="background-color:#D2691E;border:none;height:1px">
 							<ul class="pagination">
-								    <li><a href="/index?pageNum=${info.prePage}">&laquo;</a></li>
+								    <li><a href="/index?pageNum=${info.prePage}&key=${key}">&laquo;</a></li>
 								    <c:forEach begin="${info.pageNum-2 > 1 ? info.pageNum-2:1}" end="${info.pageNum+2 > info.pages ? info.pages:info.pageNum+2}" varStatus="index">    		
 								    	<c:if test="${info.pageNum!=index.index}">
-								    		<li><a href="/index?pageNum=${index.index}">${index.index}</a></li>
+								    		<li><a href="/index?pageNum=${index.index}&key=${key}">${index.index}</a></li>
 								    	</c:if>
 								    	<c:if test="${info.pageNum==index.index}">
-								    		<li><a href="/index?pageNum=${index.index}"><strong> ${index.index} </strong> </a></li>
+								    		<li><a href="/index?pageNum=${index.index}&key=${key}"><strong> ${index.index} </strong> </a></li>
 								    	</c:if>
 								    	
 								    </c:forEach>
-								    <li><a href="/index?pageNum=${info.nextPage}">&raquo;</a></li>
+								    <li><a href="/index?pageNum=${info.nextPage}&key=${key}">&raquo;</a></li>
 								</ul>
 						</div>
 			</div>		
